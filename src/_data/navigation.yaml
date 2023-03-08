@@ -1,0 +1,9 @@
+items:
+  - text: Facebook
+    url: https://www.facebook.com
+  - text: Instagram
+    url: https://www.instagram.com
+  - text: Twitter
+    url: https://twitter.com
+  - text: Blog
+    url: /blog
