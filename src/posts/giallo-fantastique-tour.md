@@ -7,9 +7,11 @@ date: 2022-06-13T01:34:12.949Z
 ---
 # Los últimos meses.
 
+![Craneo](/static/img/craneo-pap078-__alt_1.jpg "Good Craneo")
+
 Estos últimos meses han sido muy distintos. Ha pasado ya un año desde que tomé la decisión de dejar la medicina por la paz. Y sí, uno de los motivos principales fue el no haber pasado el examen nacional de residencias médicas en tres ocasiones distintas.
 
-&quot;_No te desanimes, deberías de seguir intentándolo, un amigo quedó hasta su quinto intento y logró estudiar lo que él quería.&quot;_
+&quot;*No te desanimes, deberías de seguir intentándolo, un amigo quedó hasta su quinto intento y logró estudiar lo que él quería.&quot;*
 
 De verdad no saben lo mucho que aprecio sus palabras y su confianza en mí. Sé que si lo sigo intentando algún día lograré pasar ese bendito examen, pero para serles sincero es algo que ya no deseo. Y lo digo muy en serio. Quizá algún día tendré el coraje de abrirme lo suficiente como para contar en un blog perdido de internet la principal razón por la que dejé de intentar ser especialista, pero hoy no es ese día. Tal vez mañana. O no. Es broma, no será pronto. Siento que es algo que aún no estoy listo para compartir, o quizá no tengo la madurez para verdaderamente hablarlo así que mejor dejémoslo así. ¿Va? Va.
 
