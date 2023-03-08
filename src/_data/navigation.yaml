@@ -1,4 +1,6 @@
 items:
+  - text: Inicio
+    url: /
   - text: Blog
     url: /blog
   - text: Nosotros
