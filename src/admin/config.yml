@@ -18,14 +18,16 @@ collections:
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image"}
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - widget: select
-        label: "tags"
-        name: "tags"
-        multiple: true
-        create: true
-        options: ["Tags", "created", "from", "config.yml"]
+      - {
+          widget: select,
+          label: "tags",
+          name: "tags",
+          multiple: true,
+          create: true,
+          options: ["Tags", "created", "from", "config.yml"],
+        }
   - label: "Settings"
     name: "settings"
     editor:
@@ -65,20 +67,19 @@ collections:
               - { label: Author, name: authorPreview, widget: string }
               - { label: Publish Date, name: datePreview, widget: datetime }
               - { label: Image, name: imagePreview, widget: image }
-  - name: 'posts' # Used in routes, ie.: /admin/collections/:slug/edit
-    label: 'Posts' # Used in the UI
-    label_singular: 'Post' # Used in the UI, ie: "New Post"
-    description: >
-      The description is a great place for tone setting, high level information, and editing
-      guidelines that are specific to a collection.
-    folder: '_posts'
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
-    create: true # Allow users to create new documents in this collection
+  - name: "posts"
+    label: "Posts"
+    label_singular: "Post"
+    editor:
+      preview: false
+    folder: "_posts"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} -- {{year}}/{{month}}/{{day}}"
+    create: true
     view_filters:
       - label: Posts With Index
         field: title
-        pattern: 'This is post #'
+        pattern: "This is post #"
       - label: Posts Without Index
         field: title
         pattern: front matter post
@@ -91,21 +92,54 @@ collections:
         pattern: \d{4}
       - label: Drafts
         field: draft
-    fields: # The fields each document in this collection have
-      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
-      - { label: 'Draft', name: 'draft', widget: 'boolean', default: false }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Author", name: "author", widget: "string" }
       - {
-          label: 'Publish Date',
-          name: 'date',
-          widget: 'datetime',
-          date_format: 'YYYY-MM-DD',
-          time_format: 'HH:mm',
-          format: 'YYYY-MM-DD HH:mm',
+          label: "Cover Image",
+          name: "image",
+          widget: "image",
+          required: false,
+          tagname: "",
         }
-      - label: 'Cover Image'
-        name: 'image'
-        widget: 'image'
-        required: false
-        tagname: ''
-
-      - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          date_format: "YYYY-MM-DD",
+          time_format: "HH:mm",
+          format: "YYYY-MM-DD HH:mm",
+        }
+      - { label: "Body", name: "body", widget: "markdown", hint: "Content" }
+      - {
+          widget: select,
+          label: "Categorias",
+          name: "tags",
+          multiple: true,
+          create: true,
+          options:
+            [
+              "ViolenciaFamiliar",
+              "MujeresMexicanas",
+              "AyudaParaMujeres",
+              "NoEstásSola",
+              "MujeresFuertes",
+              "MujeresValientes",
+              "MujeresUnidas",
+              "Feminismo",
+              "IgualdadDeGénero",
+              "DerechosDeLasMujeres",
+              "PrevenciónDeLaViolencia",
+              "DenunciaLaViolencia",
+              "AtenciónPsicológica",
+              "ViolenciaDoméstica",
+              "AbusoFísico",
+              "AbusoEmocional",
+              "AgresiónSexual",
+              "Machismo",
+              "Patriarcado",
+              "EmpoderamientoFemenino",
+            ],
+        }
