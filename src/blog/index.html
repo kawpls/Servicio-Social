@@ -1,33 +1,36 @@
 ---
+eleventyExcludeFromCollections: true
 layout: blog
 ---
 
 <section class="mt-15">
-  {% set postslist = collections.post %}
+  {% for post in collections.all | reverse %}
+    <article class="my-8">
+      <h2 class="mb-2 text-3xl font-bold text-gray-900">
+        <a href="{{ post.url | url }}">
+          {% if post.data.title %}
+            {{ post.data.title }}
+          {% else %} Untitled {% endif %}
+        </a>
+      </h2>
+      <p class="mb-3 text-base leading-6 text-gray-500">
+        <time>
+          {{ post.date | readableDate }}
+        </time>
+        by {{ post.data.author }}
+      </p>
+      {% for tag in post.data.tags %}
+        <p class="p-3 mb-2 mr-2 badge">#{{tag}}</p>
+      {% endfor %}
+      {% if post.data.description %}
+        <p class="mb-3 text-lg text-gray-500">{{ post.data.description }}</p>
+      {% endif %}
 
-  {% for post in postslist | reverse %}
-  <article class="my-8">
-    <h2 class="font-bold text-3xl text-gray-900 mb-2">
-      <a href="{{ post.url | url }}">
-        {% if post.data.Name %} {{ post.data.Name }} {% else %} Untitled {%
-        endif %}
-      </a>
-    </h2>
-    <p class="text-base leading-6 text-gray-500 mb-3">
-      <time>
-        {{ post.date | readableDate }} by
-        <a>{{ post.data.author }}</a>
-      </time>
-    </p>
-    {% if post.data.description %}
-    <p class="text-lg text-gray-500 mb-3">{{ post.data.description }}</p>
-    {% endif %}
-
-    <p>
-      <a href="{{ post.url | url }}" class="text-indigo-500 font-bold text-lg">
+      <p>
+        <a href="{{ post.url | url }}" class="text-lg font-bold text-indigo-500">
         Read more →
       </a>
-    </p>
-  </article>
+      </p>
+    </article>
   {% endfor %}
 </section>

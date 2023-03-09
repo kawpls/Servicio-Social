@@ -21,9 +21,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: #c8d5d8;
 }
-/* Syntax Highlighting*/
-
-body :not(pre) > code[class*="language-"],
-body pre[class*="language-"] {
-  @apply bg-gray-800;
-}

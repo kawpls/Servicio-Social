@@ -15,6 +15,10 @@
     {
       "text": "Contacto",
       "url": "/contacto"
+    },
+    {
+      "text": "Admin",
+      "url": "/Admin"
     }
   ]
 }

@@ -1,15 +1,18 @@
 ---
-title: Era celoso y posesivo, me hizo mucho daño emocional
-Name: Era celoso y posesivo
-description: Hola, soy Juana, tengo 23 años, actualmente estoy estudiando,
-  además de trabajar de estilista. Mi ex trabaja en el aeropuerto, documentando
-  maletas, es profesionista, contador, tiene 20 años. La situación económica de
-  mi familia es buena, nivel medio-alto, igual en su caso. Les contaré un poco
-  de mi historia de vida. Viví una infancia de Bullying dentro de mi familia
-  provocada por mis hermanos, me afectó aún más por la sobreprotección de mis
-  padres, por el hecho de ser mujer.
-author: Juana 23 años
+title: Me hizo daño, me fue infiel, fue agresivo y me golpeó.
+description: Hola, soy María, tengo 39 años. Mi nivel socioeconómico es bajo y
+  mi ex esposo trabajaba de empleado en el gobierno municipal, él solo estudió
+  la primaria, su familia vive bien económicamente hablando. En lo personal,
+  siempre he trabajado de secretaria, solo estudié hasta primer semestre de
+  preparatoria. Tuvimos un hijo.
+author: María 39 años
+image: /static/img/blog-img-3.png
 date: 2023-03-03T16:00:05.437Z
+tags:
+  - Feminismo
+  - ViolenciaFamiliar
+  - MujeresValientes
+  - NoEstásSola
 ---
 Hola, soy Juana, tengo 23 años, actualmente estoy estudiando, además de trabajar de estilista. Mi ex trabaja en el aeropuerto, documentando maletas, es profesionista, contador, tiene 20 años. La situación económica de mi familia es buena, nivel medio-alto, igual en su caso. Les contaré un poco de mi historia de vida. Viví una infancia de Bullying dentro de mi familia provocada por mis hermanos, me afectó aún más por la sobreprotección de mis padres, por el hecho de ser mujer.
 
