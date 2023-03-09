@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "text": "Inicio",
+      "url": "/"
+    },
+    {
+      "text": "Blog",
+      "url": "/blog"
+    },
+    {
+      "text": "Nosotros",
+      "url": "/nosotros"
+    },
+    {
+      "text": "Contacto",
+      "url": "/contacto"
+    }
+  ]
+}

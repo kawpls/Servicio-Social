@@ -1,16 +1,11 @@
 backend:
-  # Use netlify identity as backend
   name: git-gateway
   branch: master
-  ### enable below lines for github integration ###
-  # name: github
-  # repo: surjithctly/neat-starter
+
 media_folder: "src/static/img"
 public_folder: "/static/img"
-
-# Please run "npx netlify-cms-proxy-server" for local backend
-local_backend: true
-# publish_mode: editorial_workflow
+site_url: https://ayudaparalamujer.netlify.app
+publish_mode: editorial_workflow
 collections:
   - label: "Blog"
     name: "blog"
@@ -23,6 +18,7 @@ collections:
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image"}
       - { label: "Body", name: "body", widget: "markdown" }
       - widget: select
         label: "tags"
@@ -37,7 +33,7 @@ collections:
     files:
       - label: "Navigation"
         name: "items"
-        file: "src/_data/navigation.yaml"
+        file: "src/_data/navigation.json"
         fields:
           - label: Nav Items
             name: items
@@ -49,14 +45,14 @@ collections:
               - { label: URL, name: url, widget: string }
       - label: "Meta Settings"
         name: "settings"
-        file: "src/_data/settings.yaml"
+        file: "src/_data/settings.json"
         fields:
           - { label: Name, name: name, widget: string }
           - { label: Author, name: author, widget: string }
           - { label: URL, name: url, widget: string }
       - label: "Blog Preview"
         name: "links"
-        file: "src/_data/BlogPreview.yaml"
+        file: "src/_data/BlogPreview.json"
         fields:
           - label: Blog Preview
             name: links
@@ -69,3 +65,47 @@ collections:
               - { label: Author, name: authorPreview, widget: string }
               - { label: Publish Date, name: datePreview, widget: datetime }
               - { label: Image, name: imagePreview, widget: image }
+  - name: 'posts' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'Posts' # Used in the UI
+    label_singular: 'Post' # Used in the UI, ie: "New Post"
+    description: >
+      The description is a great place for tone setting, high level information, and editing
+      guidelines that are specific to a collection.
+    folder: '_posts'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
+    create: true # Allow users to create new documents in this collection
+    view_filters:
+      - label: Posts With Index
+        field: title
+        pattern: 'This is post #'
+      - label: Posts Without Index
+        field: title
+        pattern: front matter post
+      - label: Drafts
+        field: draft
+        pattern: true
+    view_groups:
+      - label: Year
+        field: date
+        pattern: \d{4}
+      - label: Drafts
+        field: draft
+    fields: # The fields each document in this collection have
+      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
+      - { label: 'Draft', name: 'draft', widget: 'boolean', default: false }
+      - {
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
+          date_format: 'YYYY-MM-DD',
+          time_format: 'HH:mm',
+          format: 'YYYY-MM-DD HH:mm',
+        }
+      - label: 'Cover Image'
+        name: 'image'
+        widget: 'image'
+        required: false
+        tagname: ''
+
+      - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
