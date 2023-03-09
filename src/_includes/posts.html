@@ -1,35 +1,37 @@
 ---
 layout: default
 ---
-<div class="container mx-auto max-w-4xl mt-6 px-6">
+<div class="container max-w-4xl px-6 mx-auto mt-6">
   <div class="pb-5 mb-5 border-b border-gray-100">
-    <h1 class="font-bold text-5xl">{{Name}}</h1>
-    <p class="text-right text-base leading-6 font-medium text-gray-500">
+    <h1 class="text-5xl font-bold">{{Name}}</h1>
+    <p class="text-base font-medium leading-6 text-right text-gray-500">
       <time>
         {{ date | readableDate }} by
         <a>{{ author }}</a>
       </time>
     </p>
   </div>
-  <article class="prose lg:prose-xl my-4 mx-auto">{{ content | safe }}</article>
+  <article class="mx-auto my-4 prose lg:prose-xl">{{ content | safe }}</article>
   <div id="disqus_thread"></div>
 </div>
 
 <script>
-    /**
+  /**
     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    
-    var disqus_config = function () {
-    this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+
+  var disqus_config = function () {
+    this.page.url = window.location.href; // Replace PAGE_URL with your page's canonical URL variable
     this.page.identifier = window.location.pathname; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
+  };
+
+  (function () { // DON'T EDIT BELOW THIS LINE
+    var d = document,
+      s = d.createElement('script');
     s.src = 'https://estoriteler.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
+    s.setAttribute('data-timestamp', + new Date());
     (d.head || d.body).appendChild(s);
-    })();
+  })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>

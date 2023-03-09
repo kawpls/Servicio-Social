@@ -1,16 +1,17 @@
 ---
 layout: default
 title: Ayuda Para La Mujer
-description: Compartir la experiencia y aprender de otras experiencias de mujeres víctimas de violencia intrafamiliar o de pareja, que alienten a la motivación y fuerza de las mujeres en situaciones semejantes.
+description: Compartir la experiencia y aprender de otras experiencias de mujeres víctimas de violencia intrafamiliar o
+de pareja, que alienten a la motivación y fuerza de las mujeres en situaciones semejantes.
 path: home
 ---
 
-<div  class="hero min-h-screen"  style="background-image: url('https://ayudaparalamujer.org/img/banner5.png');">
+<div class="min-h-screen hero" style="background-image: url('https://ayudaparalamujer.org/img/banner5.png')">
   <div class=""></div>
   <div class="text-center text-neutral-content">
     <div class="max-w-md">
-      <h1 class="text-gray-800 mb-5 text-5xl font-bold">Ayuda Para La Mujer</h1>
-      <p class="text-gray-800 mb-5 font-medium text-md">
+      <h1 class="mb-5 text-5xl font-bold text-gray-800">Ayuda Para La Mujer</h1>
+      <p class="mb-5 font-medium text-gray-800 text-md">
         Si vencí al maltrato, soy capaz de todo.
       </p>
       <a href="/blog" class="btn btn-wide btn-xl">Blog</a>
@@ -19,22 +20,18 @@ path: home
 </div>
 <div class="container mx-auto">
   {% for item in BlogPreview.links %}
-  <div class="card shadow-md lg:card-side bordered my-4 mx-4">
-    <div class="">
-      <img
-        class="min-h-full min-w-full lg:max-w-lg"
-        src="{{item.imagePreview}}"
-      />
-    </div>
-    <div class="card-body">
-      <h2 class="card-title">{{item.titlePreview}}</h2>
-      <p class="my-1">{{item.authorPreview}}</p>
-      <p>{{item.descPreview}}</p>
-      <div class="card-actions justify-end">
-        <a class="btn btn-ghost" href="{{item.urlPreview}}">Seguir Leyendo</a>
+    <div class="mx-4 my-4 shadow-md card lg:card-side bordered">
+      <div class="">
+        <img class="min-w-full min-h-full lg:max-w-lg" src="{{ item.imagePreview }}"/>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">{{ item.titlePreview }}</h2>
+        <p class="my-1">{{ item.authorPreview }}</p>
+        <p>{{ item.descPreview }}</p>
+        <div class="justify-end card-actions">
+          <a class="btn btn-ghost" href="{{ item.urlPreview }}">Seguir Leyendo</a>
+        </div>
       </div>
     </div>
-  </div>
   {% endfor %}
 </div>
-
