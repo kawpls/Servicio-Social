@@ -5,7 +5,7 @@ description: Hola, soy María, tengo 39 años. Mi nivel socioeconómico es bajo 
   la primaria, su familia vive bien económicamente hablando. En lo personal,
   siempre he trabajado de secretaria, solo estudié hasta primer semestre de
   preparatoria. Tuvimos un hijo.
-draft: false
+draft: true
 author: María 39 años.
 image: https://ayudaparalamujer.org/img/portadahistoria2.png
 date: 2023-03-09 10:57
