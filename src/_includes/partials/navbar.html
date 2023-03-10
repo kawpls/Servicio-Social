@@ -1,50 +1,18 @@
 <div class="{{ 'lg:fixed' if path == 'home' }} w-full z-10">
-  <nav
-    class="flex items-center justify-center bg-[#DFC1CE] p-4"
-    x-data="{ isOpen: false }"
-    @keydown.escape="isOpen = false"
-  >
+  <nav class="flex items-center justify-center lg:justify-between flex-wrap p-6 bg-[#DFC1CE]" x-data="{ isOpen: false }" @keydown.escape="isOpen = false"  @click.away="isOpen = false">
     <!--Logo etc-->
     <a href="/" class="w-[40%] lg:w-[20%]">
-      <img
-        src="https://ayudaparalamujer.org/img/logo.png"
-        alt="logo"
-        class="object-cover object-center w-full h-full"
-/>
+      <img src="https://ayudaparalamujer.org/img/logo.png" alt="logo" class="object-cover object-center w-full h-full"/>
     </a>
     <!--Toggle button (hidden on large screens)-->
-    <button
-      @click="isOpen = !isOpen"
-      type="button"
-      class="block px-2 ml-auto lg:hidden text-primary-500 hover:text-primary-500 focus:outline-none focus:text-primary-500"
-      :class="{ 'transition transform-180': isOpen }"
-      aria-label="Menu"
-    >
-      <svg
-        class="w-6 h-6 fill-current"
-        xmlns="http://www.w3.org/2000/svg"
-        viewbox="0 0 24 24"
-      >
-        <path
-          x-show="isOpen"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-/>
-        <path
-          x-show="!isOpen"
-          fill-rule="evenodd"
-          d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-/>
+    <button @click="isOpen = !isOpen" type="button" class="block px-2 ml-auto lg:hidden text-primary-500 hover:text-primary-500 focus:outline-none focus:text-primary-500" :class="{ 'transition transform-180': isOpen }" aria-label="Menu">
+      <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+        <path x-show="isOpen" fill-rule="evenodd" clip-rule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"/>
+        <path x-show="!isOpen" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
       </svg>
     </button>
     <!--Menu-->
-    <div
-      class="flex-grow w-full text-center lg:flex lg:items-center lg:w-auto"
-      :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }"
-      @click.outside="isOpen = false"
-      x-transition="true"
-    >
+    <div class="flex-grow w-full text-center lg:flex lg:items-center lg:w-auto " :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }" x-show.transition="true">
       {% if navigation.items %}
         <ul
         class="items-center justify-end flex-1 pt-6 lg:pt-0 list-reset lg:flex"
