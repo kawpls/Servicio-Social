@@ -8,13 +8,13 @@
     {% if description %}
       <meta name="description" content="{{description}}"/>
     {% endif %}
-    <link defer rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
   </head>
   <body>
     {% include "./partials/navbar.html" %}
     {{ content | safe }}
     {% include "./partials/footer.html" %}
-    <script defer src="/static/js/alpine.js"></script>
+    <script src="/static/js/alpine.js"></script>
     {% if path == "home" %}
       <script defer type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {% endif %}
