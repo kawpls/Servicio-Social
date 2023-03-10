@@ -8,15 +8,15 @@
     {% if description %}
       <meta name="description" content="{{description}}"/>
     {% endif %}
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <link defer rel="stylesheet" type="text/css" href="/static/css/style.css"/>
   </head>
   <body>
     {% include "./partials/navbar.html" %}
     {{ content | safe }}
     {% include "./partials/footer.html" %}
-    <script src="/static/js/alpine.js"></script>
+    <script defer src="/static/js/alpine.js"></script>
     {% if path == "home" %}
-      <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+      <script defer type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {% endif %}
   </body>
 
