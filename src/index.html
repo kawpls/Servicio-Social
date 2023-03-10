@@ -5,29 +5,32 @@ title: Ayuda Para La Mujer
 description: Compartir la experiencia y aprender de otras experiencias de mujeres víctimas de violencia intrafamiliar o de pareja, que alienten a la motivación y fuerza de las mujeres en situaciones semejantes.
 path: home
 ---
-<div class="min-h-screen hero" style="background-image: url('https://ayudaparalamujer.org/img/banner5.png')">
-  <div class=""></div>
-  <div class="text-center text-neutral-content">
+
+<div class="min-h-screen hero " style="background-image: url('https://ayudaparalamujer.org/img/banner5.png')">
+  <div class="hero-overlay bg-opacity-20 "></div>
+  <div class="text-center hero-content text-neutral-content">
     <div class="max-w-md">
-      <h1 class="mb-5 text-5xl font-bold text-gray-800">Ayuda Para La Mujer</h1>
-      <p class="mb-5 font-medium text-gray-800 text-md">
+      <h1 class="mb-5 text-5xl font-bold">Ayuda Para La Mujer</h1>
+      <p class="mb-5 font-medium text-md">
         Si vencí al maltrato, soy capaz de todo.
       </p>
       <a href="/blog" class="btn btn-wide btn-xl">Blog</a>
     </div>
   </div>
 </div>
-<div class="container mx-auto">
-  {% for item in BlogPreview.links %}
-    <div class="shadow-xl card lg:card-side bg-base-100">
-      <figure><img class="w-full h-full" src="{{ item.imagePreview }}" alt="BlogImage"/></figure>
-      <div class="card-body">
-        <h2 class="card-title">{{ item.titlePreview }}</h2>
-        <p>{{ item.descPreview }}</p>
-        <div class="justify-end card-actions">
-          <a class="btn btn-ghost" href="{{ item.urlPreview }}">Seguir Leyendo</a>
+<section class="mt-8">
+  <div class="container mx-auto">
+    {% for item in BlogPreview.links %}
+      <div class="shadow-xl card lg:card-side bg-base-100">
+        <figure><img class="w-full h-full" src="{{ item.imagePreview }}" alt="BlogImage"/></figure>
+        <div class="card-body">
+          <h2 class="card-title">{{ item.titlePreview }}</h2>
+          <p>{{ item.descPreview }}</p>
+          <div class="justify-end card-actions">
+            <a class="btn btn-ghost" href="{{ item.urlPreview }}">Seguir Leyendo</a>
+          </div>
         </div>
       </div>
-    </div>
-  {% endfor %}
-</div>
+    {% endfor %}
+  </div>
+</section>
