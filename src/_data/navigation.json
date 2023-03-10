@@ -2,23 +2,28 @@
   "items": [
     {
       "text": "Inicio",
-      "url": "/"
+      "url": "/",
+      "icon": "/static/img/home.svg"
     },
     {
       "text": "Blog",
-      "url": "/blog"
+      "url": "/blog",
+      "icon": "/static/img/book-open.svg"
     },
     {
       "text": "Nosotros",
-      "url": "/nosotros"
+      "url": "/nosotros",
+      "icon": "/static/img/user.svg"
     },
     {
       "text": "Contacto",
-      "url": "/contacto"
+      "url": "/contacto",
+      "icon": "/static/img/mail.svg"
     },
     {
       "text": "Admin",
-      "url": "/Admin"
+      "url": "/Admin",
+      "icon": "/static/img/lock.svg"
     }
   ]
 }

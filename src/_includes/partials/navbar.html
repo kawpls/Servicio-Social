@@ -2,7 +2,7 @@
   <nav class="flex items-center justify-center lg:justify-between flex-wrap p-6 bg-[#DFC1CE]" x-data="{ isOpen: false }" @keydown.escape="isOpen = false"  @click.away="isOpen = false">
     <!--Logo etc-->
     <a href="/" class="w-[40%] lg:w-[20%]">
-      <img src="static/img/logo.webp" alt="logo" class="object-cover object-center w-full h-full"/>
+      <img src="/static/img/logo.webp" alt="logo" class="object-cover object-center w-full h-full"/>
     </a>
     <!--Toggle button (hidden on large screens)-->
     <button @click="isOpen = !isOpen" type="button" class="block px-2 ml-auto lg:hidden text-primary-500 hover:text-primary-500 focus:outline-none focus:text-primary-500" :class="{ 'transition transform-180': isOpen }" aria-label="Menu">
@@ -15,26 +15,28 @@
     <div class="flex-grow w-full text-center lg:flex lg:items-center lg:w-auto " :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }" x-show.transition="true">
       {% if navigation.items %}
         <ul
-        class="items-center justify-end flex-1 pt-6 lg:pt-0 list-reset lg:flex"
+        class="items-center justify-end flex-1 lg:flex"
       >
           {% for item in navigation.items %}
-            <li class="mr-3 nav__item">
-              {% if '/blog' in page.url or '/posts' in page.url %}
-                <a
+            <div class="flex items-center justify-center " style="color: blue;">
+              <img class="inline-flex " src="{{ item.icon }}" alt="{{ item.text }}"/>
+              <li class="p-4">
+                {% if '/blog' in page.url or '/posts' in page.url %}
+                  <a
             @click="isOpen = false"
-            class="inline-block px-2 py-2 text-lg font-bold text-gray-800 no-underline hover:text-gray-400"
+            class="text-lg font-bold text-gray-800 no-underline hover:text-gray-400"
+            href="{{ item.url }}"
+            >{{ item.text }}</a>
+                  {%else%}
+                  <a
+            @click="isOpen = false"
+            class="text-lg font-bold text-gray-800 no-underline lg:text-gray-800 hover:text-amber-500"
             href="{{ item.url }}"
             >{{ item.text }}</a
           >
-                {%else%}
-                <a
-            @click="isOpen = false"
-            class="inline-block px-2 py-2 text-lg font-bold text-gray-800 no-underline lg:text-gray-800 hover:text-amber-500"
-            href="{{ item.url }}"
-            >{{ item.text }}</a
-          >
-              {% endif %}
-            </li>
+                {% endif %}
+              </li>
+            </div>
           {% endfor %}
         </ul>
       {% endif %}
