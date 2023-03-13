@@ -1,13 +1,6 @@
 module.exports = {
   content: ["./**/*.html"],
-  theme: {
-    container: {
-      center: true,
-    },
-    extend: {
-      colors: {},
-    },
-  },
+  theme: {},
   variants: {},
   plugins: [require("@tailwindcss/typography"),
   require("daisyui"),
